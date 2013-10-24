@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Color Picker</title>
+  <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+</head>
+<body>
+  <span id="holder" style="background-color:white;">Pick a color: </span>
+  <script type="text/javascript">
+      var colorPicker = $('<input type="color" value="white">');
+      $('#holder').append(colorPicker);
+      var interval = setInterval(function () {
+          var color = $('input')[0];
+          $('body')[0].style.backgroundColor = color.value;
+      }, 3000);
+  </script>
+</body>
+</html>

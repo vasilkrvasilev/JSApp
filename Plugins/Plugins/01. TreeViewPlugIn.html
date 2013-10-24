@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title></title>
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="TreeViewPlugIn.js"></script>
+</head>
+<body>
+    <ul id="list">
+      <li class="item"><a href="#">1</a>
+        <ul class="subList">
+          <li class="subitem"><a href="#">1.1</a></li>      
+          <li class="subitem"><a href="#">1.2</a></li>
+          <li class="subitem"><a href="#">1.3</a>
+              <ul class="subsubList">
+                  <li class="subsubitem"><a href="#">1.3.1</a></li>
+                  <li class="subsubitem"><a href="#">1.3.2</a></li>
+              </ul>
+          </li>
+          <li class="subitem"><a href="#">1.4</a></li>
+        </ul>
+      </li>
+      <li class="item"><a href="#">2</a></li>
+      <li class="item"><a href="#">3</a></li>
+      <li class="item"><a href="#">4</a></li>
+      <li class="item"><a href="#">5</a>
+        <ul class="subList">
+          <li class="subitem"><a href="#">5.1</a>
+              <ul class="subsubList">
+                  <li class="subsubitem"><a href="#">5.1.1</a></li>
+                  <li class="subsubitem"><a href="#">5.1.2</a></li>
+              </ul>
+          </li>      
+          <li class="subitem"><a href="#">5.2</a></li>
+          <li class="subitem"><a href="#">5.3</a></li>
+        </ul>
+      </li>
+      <li class="item"><a href="#">6</a></li>
+      <li class="item"><a href="#">7</a>
+        <ul class="subList">
+          <li class="subitem"><a href="#">7.1</a></li>      
+          <li class="subitem"><a href="#">7.2</a></li>
+          <li class="subitem"><a href="#">7.3</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <script>
+        // Example - chaining
+		$('li ul').css('display', 'none');
+        $(document).ready(function () {
+            $('a')
+              .treeView()
+                .css('color', 'black')
+                    .on('click', function (event) {
+                        $(event.target).append('<em>Clicked</em>');
+                        $(event.target).css('color', 'green');
+                    })
+        });
+    </script>
+</body>
+</html>
